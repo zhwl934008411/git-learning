@@ -68,7 +68,8 @@ git fetch
 git branch -b dev origin/dev
 
 将远程库的更新拉取到本地并同步
-git pull 
+git pull origin master 
+合并本地和远程的master分支
 
 将本地库的dev分支链接到远程库的origin/dev
 git branch --set-upstream dev origin/dev
