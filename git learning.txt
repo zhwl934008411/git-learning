@@ -1,0 +1,112 @@
+Git 世界上最先進的分布版本管理工具
+
+
+自动记录每次文件的改动
+还可以让同事协作编辑
+
+git config 
+git clone 将远程服务器的代码下载到本地
+git fetch 将远程的更新同步到本地
+git rebase 合并分支
+git init 
+git remote 
+git commit
+git push 本地代码推送到远程服务器上
+git checkout :restore working tree files/switch branches 
+安装sudo apt install git
+安装完成后设置用户名和邮箱
+git config --global user.name "Your Name"
+git config --global user.email "your email"
+
+查看用户名和邮箱
+git config user.name
+git config user.email
+直接在cconfig文件修改
+全局的.gitconfig文件的命令为：vi ~/.gitconfig; 
+
+创建版本库:add repository,可以理解为创建目录,里面所有的文件都可以被git管理,每个文件的修改,删除,git都可以跟踪,生成历史,以便某个时刻进行还原
+
+cd /home/
+mkdir learningit
+cd learningit
+git init ./ 初始化当前文件夹,让这个目录可以变成git可以管理的仓库
+自动创建.git directory
+取消init rm -r .git
+
+
+编辑readme.txt 
+Git is a version control system.
+Git is free software.
+
+git add filename 添加
+
+git commit -m "本次提交的说明" 提交到本地版本库
+git commit -m "wrote a readme file"
+
+modified readme.txt
+git status
+git diff readme.txt
+git add readme.txt
+git commit -m ""
+git status
+
+
+git log [<options>] [<revision range>] [[--] <path>...]
+
+
+git reset --hard commit_id
+
+git reset --hard HEAD^(HEAD~1)
+
+git log 
+
+git reflog
+
+因为我们创建Git版本库时，Git自动为我们创建了唯一一个master分支，所以，现在，git commit就是往master分支上提交更改。
+
+stage 暂存区
+git diff --cached    #是暂存区(stage)和分支(master)的比较
+git diff    #是工作区(work dict)和暂存区(stage)的比较
+git diff HEAD -- readme.txt #工作区work dict与版本库git respository的比较
+
+git checkout -- file 撤销上次的修改
+
+git checkout file 切换到另一个分支
+
+
+用命令git reset HEAD file可以把暂存区的修改撤销掉（unstage），重新放回工作区：相当于撤销add Unstaged changes after reset:
+
+git rm test.txt 将工作区与仓库的代码都删除
+误删工作区文件,撤销,从仓库恢复git checkout -- test.txt,
+
+远程仓库:
+sudo apt install ssh
+ssh-keygen -t rsa -C "a934008411@outlook.com"
+id_rsa 	私钥
+id_rsa.pub	公钥
+
+
+
+Ubuntu 16.04 LTS设置SSH服务
+服务端
+sudo apt install openssh-server
+
+service sshd start或者/etc/init.d/ssh start
+
+chkconfig sshd on
+
+ps -ef | grep sshd
+
+客户端
+apt install openssh-client
+
+生成密钥
+ssh-keygen -t rsa
+
+push an existing repository from the command line
+
+
+
+
+
+
